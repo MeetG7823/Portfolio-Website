@@ -116,18 +116,75 @@ section {
   box-shadow: 0 0 10px var(--accent-glow);
 }
 
+/* Hero section responsive styling */
+.hero-section {
+  align-items: flex-start;
+  padding-top: clamp(6rem, 12vh, 10rem);
+}
+
+.hero-greeting {
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  margin-bottom: 0.75rem;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 4.5vw, 4.5rem);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.8rem);
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: clamp(0.95rem, 1.15vw, 1.15rem);
+  line-height: 1.6;
+  color: #d4d4d4;
+  margin-bottom: 2rem;
+  max-width: 580px;
+}
+
+.hero-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-btn-icon {
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 30%;
+}
+
 /* Content Wrapper to avoid overlapping with right-side bitmoji */
 .content-wrapper {
-  max-width: 65%;
+  max-width: min(58%, 680px);
   width: 100%;
 }
 
-/* Bitmoji container setup */
+/* Bitmoji container setup - Dynamic responsive sizing according to resolution */
 .bitmoji-wrapper {
   position: fixed;
   top: 0;
-  right: 5%;
-  width: 450px;
+  right: clamp(2%, 4vw, 5%);
+  width: min(clamp(200px, 22vw, 350px), 38vh);
   height: 100vh;
   pointer-events: none;
   z-index: 10;
@@ -142,7 +199,7 @@ section {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
 }
 
 /* Subtle rotating electric charging halo ring */
@@ -230,7 +287,7 @@ section {
 
 .bitmoji-img {
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 50%;
@@ -294,7 +351,56 @@ section {
   color: var(--accent);
 }
 
-@media (max-width: 992px) {
+/* Resolution Specific Media Queries */
+
+/* Large Monitors (1600px+) */
+@media (min-width: 1600px) {
+  .bitmoji-wrapper {
+    width: min(340px, 22vw);
+    right: 5%;
+  }
+  .content-wrapper {
+    max-width: 58%;
+  }
+}
+
+/* Standard Laptops (1025px to 1599px) */
+@media (max-width: 1599px) and (min-width: 1025px) {
+  .bitmoji-wrapper {
+    width: min(270px, 19vw);
+    right: 3%;
+  }
+  .content-wrapper {
+    max-width: 56%;
+  }
+}
+
+/* Small Laptops & Landscape Tablets (769px to 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .bitmoji-wrapper {
+    width: min(220px, 20vw);
+    right: 2%;
+  }
+  .content-wrapper {
+    max-width: 54%;
+  }
+}
+
+/* Height-constrained Laptop Displays (Screen Height < 800px) */
+@media (max-height: 800px) and (min-width: 769px) {
+  .bitmoji-wrapper {
+    width: min(240px, 32vh);
+  }
+}
+
+@media (max-height: 700px) and (min-width: 769px) {
+  .bitmoji-wrapper {
+    width: min(200px, 28vh);
+  }
+}
+
+/* Mobile & Small Screen Devices (< 768px) */
+@media (max-width: 768px) {
   .content-wrapper {
     max-width: 100%;
   }
@@ -308,9 +414,17 @@ section {
     margin-bottom: 2rem;
   }
 
+  .bitmoji-avatar-container {
+    width: min(220px, 60vw);
+  }
+
   .bitmoji-img {
-    width: 250px;
-    height: 250px;
+    width: min(220px, 60vw);
+  }
+
+  .hero-scroll-indicator {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .nav-menu {

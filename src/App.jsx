@@ -80,29 +80,29 @@ function App() {
 
       <main>
         {/* HERO SECTION */}
-        <section id="home" className="container" style={{ alignItems: 'flex-start', paddingTop: '10rem' }}>
+        <section id="home" className="container hero-section">
           <div className="content-wrapper">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="mono-font gradient-text" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Hi, I'm</h2>
-              <h1 style={{ fontSize: '4.5rem', marginBottom: '1rem' }}>MEET GONDALIA</h1>
-              <h3 style={{ fontSize: '2rem', color: 'var(--text-secondary)', marginBottom: '2rem' }}>
+              <h2 className="mono-font gradient-text hero-greeting">Hi, I'm</h2>
+              <h1 className="hero-title">MEET GONDALIA</h1>
+              <h3 className="hero-subtitle">
                 Software Engineer | AI/ML | Full-Stack
               </h3>
-              <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: '#d4d4d4', marginBottom: '2rem' }}>
+              <p className="hero-description">
                 Computer Engineering student at Iowa State University building reliable solutions with measurable impact. Eager to apply machine learning, automation, and full-stack development to complex problems.
               </p>
-              <div style={{ display: 'flex', gap: '1rem' }}>
-                <a href="mailto:meet7823@iastate.edu" className="glass-panel" style={{ padding: '0.8rem 1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <div className="hero-cta-buttons">
+                <a href="mailto:meet7823@iastate.edu" className="glass-panel hero-btn">
                   <Mail size={20} /> Contact Me
                 </a>
-                <a href="https://github.com" target="_blank" rel="noreferrer" className="glass-panel" style={{ padding: '0.8rem', display: 'flex', alignItems: 'center' }}>
+                <a href="https://github.com" target="_blank" rel="noreferrer" className="glass-panel hero-btn-icon" aria-label="GitHub">
                   <FaGithub size={20} />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="glass-panel" style={{ padding: '0.8rem', display: 'flex', alignItems: 'center' }}>
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="glass-panel hero-btn-icon" aria-label="LinkedIn">
                   <FaLinkedin size={20} />
                 </a>
               </div>
@@ -111,7 +111,7 @@ function App() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
-            style={{ position: 'absolute', bottom: '2rem', left: '30%' }}
+            className="hero-scroll-indicator"
           >
             <ChevronDown size={32} color="var(--accent)" />
           </motion.div>
