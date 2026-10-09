@@ -502,11 +502,121 @@ section {
   border-radius: 100px;
   color: var(--text-secondary);
   transition: all 0.2s;
+  cursor: pointer;
 }
 
-.nav-menu a:hover {
+.nav-menu a:hover,
+.nav-menu a.active,
+.nav-menu button.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+}
+
+.nav-menu button {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 100px;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.nav-menu button:hover {
   color: #fff;
   background: rgba(255,255,255,0.08);
+}
+
+/* ==========================================================================
+   RESUME PAGE STYLES (Inspired by sunnypatel.net)
+   ========================================================================== */
+
+.resume-page-wrapper {
+  min-height: 100vh;
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Resume Document Container */
+.resume-container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+/* Simple Action Bar */
+.resume-simple-actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.simple-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(24, 24, 27, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e4e4e7;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+}
+
+.simple-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.simple-btn.primary {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  font-weight: 600;
+}
+
+.simple-btn.primary:hover {
+  background: #f4f4f5;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.pdf-embed-wrapper {
+  width: 100%;
+  height: 85vh;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 0;
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.pdf-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* Breakpoints */
